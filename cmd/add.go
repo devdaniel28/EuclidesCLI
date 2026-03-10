@@ -12,8 +12,11 @@ import (
 
 func init() {
 	rootCmd.AddCommand(squareRootCmd)
+	rootCmd.AddCommand(formulaBhaskara)
+	rootCmd.AddCommand(exponentiation)
 }
 
+//! Math Algebra
 var squareRootCmd = &cobra.Command{
 	Use: "sqrt",
 	Short: "Calculate the square root of the given number.",
@@ -32,5 +35,20 @@ var squareRootCmd = &cobra.Command{
 
 		result := math.Sqrt(source)
 		fmt.Printf("The square root of %.2f is %.4f \n", source, result)
+	},
+}
+
+var exponentiation = &cobra.Command{
+	Use: "exp",
+	Run: func(cmd *cobra.Command, args []string) {
+		//Todo: Fazer a cmd de happy nation
+	},
+}
+
+var formulaBhaskara = &cobra.Command{
+	Use: "fbh",
+	Short: "Bhaskara's formula is an algebraic expression used to calculate second-degree equations.",
+	Run: func(cmd *cobra.Command, args []string) {
+		//todo: fazer a cmd da formula de bhaskara
 	},
 }
