@@ -53,3 +53,39 @@ var exponentiation = &cobra.Command{
 		fmt.Printf("The formula is: %.f ^ %.f = %.f \n", base, exponent, result)
 	},
 }
+
+var percentage = &cobra.Command{
+	Use: "perc",
+	Short: "Calculate the percentage of a given number.",
+	Args: cobra.ExactArgs(2),
+	Run: func(cmd *cobra.Command, args []string) {
+		number, err := strconv.ParseFloat(args[0], 64)
+		percent, err1 := strconv.ParseFloat(args[1], 64)
+
+		if err != nil || err1 != nil{
+			log.Fatalln("Error: This is not a valid number.")
+		}
+
+		if number > 32000000000 {
+			log.Fatalln("Error: Number too large, try another.")
+		}
+
+		result := (percent / 100) * number
+		percentStr := strconv.FormatFloat(percent, 'f', 2, 64) + "%"
+
+		fmt.Printf("%s of %.2f equals %.2f \n", percentStr, number, result)
+	},
+}
+
+var simpleRuleOfThree = &cobra.Command{
+	Use: "srot",
+	Short: "The famous rule of three used for relating values.",
+	Args: cobra.ExactArgs(3),
+	Run: func(cmd *cobra.Command, args []string) {
+		//todo: Criar a cmd da regra de 3
+	},
+}
+
+var ratioAndProportion = &cobra.Command{
+	Use: "rap",
+}
