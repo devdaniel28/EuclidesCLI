@@ -7,8 +7,6 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var amount float64 //todo comfigura a flag dessa cmd abaixo
-
 var simpleInterest = &cobra.Command{
 	Use: "sint",
 	Short: "A simple calculation about compound interest.",
