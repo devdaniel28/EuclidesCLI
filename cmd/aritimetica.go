@@ -60,9 +60,9 @@ var percentage = &cobra.Command{
 	Args: cobra.ExactArgs(2),
 	Run: func(cmd *cobra.Command, args []string) {
 		number, err := strconv.ParseFloat(args[0], 64)
-		percent, err1 := strconv.ParseFloat(args[1], 64)
+		percent, err := strconv.ParseFloat(args[1], 64)
 
-		if err != nil || err1 != nil{
+		if err != nil{
 			log.Fatalln("Error: This is not a valid number.")
 		}
 
@@ -79,13 +79,19 @@ var percentage = &cobra.Command{
 
 var simpleRuleOfThree = &cobra.Command{
 	Use: "srot",
-	Short: "The famous rule of three used for relating values.",
+	Short: "This is the rule of three.",
 	Args: cobra.ExactArgs(3),
 	Run: func(cmd *cobra.Command, args []string) {
-		//todo: Criar a cmd da regra de 3
+		numericalRelation, err := strconv.ParseFloat(args[0], 64)
+		numericalRelation2, err := strconv.ParseFloat(args[1], 64)
+		numericalRelation3, err := strconv.ParseFloat(args[2], 64)
+
+		if err != nil {
+			log.Fatalln("Error: This is not a valid number.")
+		}
+
+		 valueX := numericalRelation * numericalRelation2 / numericalRelation3
+		 fmt.Printf("The value of X is %.f \n", valueX)
 	},
 }
 
-var ratioAndProportion = &cobra.Command{
-	Use: "rap",
-}
