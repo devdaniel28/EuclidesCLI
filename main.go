@@ -1,6 +1,6 @@
 package main
 
-import "github.com/devdaniel28/EuclidesCLI/cmd"
+import "devdaniel28/euc/cmd"
 
 func main() {
 	cmd.Run()

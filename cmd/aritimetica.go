@@ -94,4 +94,3 @@ var simpleRuleOfThree = &cobra.Command{
 		 fmt.Printf("The value of X is %.f \n", valueX)
 	},
 }
-

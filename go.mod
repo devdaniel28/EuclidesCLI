@@ -1,4 +1,4 @@
-module github.com/devdaniel28/EuclidesCLI
+module devdaniel28/euc
 
 go 1.22.2
 
